@@ -1,0 +1,28 @@
+<!--! + tab-->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<input type="file" id="f1"/>
+<img>
+</body>
+<script>
+    var f1 = document.querySelector("#f1")
+    f1.onchange = function () {
+        var fl1 = this.files[0]
+        var fReader = new FileReader()
+        fReader.readAsDataURL(fl1)
+        fReader.onload = function () {
+            debugger
+            var result = fReader.result
+            document.querySelector('img').src = result
+        }
+    }
+</script>
+</html>

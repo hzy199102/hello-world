@@ -1,0 +1,42 @@
+<!--! + tab-->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<input type="file" id="f1"/>
+<input type="file" id="f2"/>
+<div></div>
+</body>
+<script>
+    var f1 = document.querySelector("#f1")
+    f1.onchange = function () {
+        var fl1 = this.files[0]
+        var fReader = new FileReader()
+        fReader.readAsText(fl1)
+        fReader.onload = function () {
+            var result = fReader.result
+            var style = document.createElement('style')
+            style.innerHTML = result
+            document.querySelector('head').appendChild(style)
+        }
+    }
+    var f2 = document.querySelector("#f2")
+    f2.onchange = function () {
+        var fl2 = this.files[0]
+        var fReader = new FileReader()
+        fReader.readAsText(fl2)
+        fReader.onload = function () {
+            var result = fReader.result
+            var script = document.createElement('script')
+            script.innerHTML = result
+            document.querySelector('body').appendChild(script)
+        }
+    }
+</script>
+</html>
