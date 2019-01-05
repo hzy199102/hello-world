@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='UTF-8'>
+    <title>Clear Both</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font: 14px/1.8 Georgia, serif;
+        }
+        #page { }
+        #page:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+    </style>
+</head>
+<body>
+<div id="page">
+    <div style="width: 200px; height: 200px; float: left">我爱你</div>
+    <div style="width: 200px; height: 200px; float: left">我也爱你</div>
+</div>
+</body>
+</html>
